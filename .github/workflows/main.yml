@@ -40,7 +40,7 @@ jobs:
       
       # Runs a single command using the runners shell
       - name: Build terraform state
-        run: chmod +x ./tfstate.sh && ./tfstate.h ${{ env.AZURE_STORAGE }}
+        run: chmod +x ./tfstate.sh && ./tfstate.sh ${{ env.AZURE_STORAGE }}
         
       - name: HashiCorp - Setup Terraform
         # You may pin to the exact commit or the version.
@@ -53,7 +53,7 @@ jobs:
       - name: Terraform plan
         run: terraform plan -out=tfplan
         
-      - name: Terraform apply tf
+      - name: Terraform apply
         run: terraform apply tfplan
         
         
